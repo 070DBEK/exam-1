@@ -23,6 +23,6 @@ from taxi.views import taxi_list
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('meals/', meals_list),
+    path('', meals_list),
     path('taxi/', taxi_list),
 ]

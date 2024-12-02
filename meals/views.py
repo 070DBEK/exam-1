@@ -18,5 +18,5 @@ def meals_list(request):
             )
 
 
-    taxis = Meal.objects.all()
-    return render(request, 'taxi/taxi_list.html', {'taxis': taxis})
+    meals = Meal.objects.all()
+    return render(request, 'meals/meals_list.html', {'meals': meals})
