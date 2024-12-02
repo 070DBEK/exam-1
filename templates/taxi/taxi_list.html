@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Taxi List</title>
+</head>
+<body>
+    <h1>Taxi Management</h1>
+    <form method="GET">
+        <label>Taxi Name:</label><input type="text" name="name"><br>
+        <label>License Plate:</label><input type="text" name="license_plate"><br>
+        <label>Driver Name:</label><input type="text" name="driver_name"><br>
+        <label>Passenger Capacity:</label><input type="number" name="passenger_capacity"><br>
+        <label>Status:</label>
+        <select name="status">
+            <option>Available</option>
+            <option>Busy</option>
+            <option>Under Maintenance</option>
+        </select><br>
+        <label>Car Model:</label><input type="text" name="car_model"><br>
+        <button type="submit">Submit</button>
+    </form>
+    <h2>Taxi List</h2>
+    <table border="1">
+        <tr>
+            <th>Taxi Name</th>
+            <th>License Plate</th>
+            <th>Driver</th>
+            <th>Capacity</th>
+            <th>Status</th>
+            <th>Car Model</th>
+        </tr>
+        {% for taxi in taxis %}
+        <tr>
+            <td>{{ taxi.name }}</td>
+            <td>{{ taxi.license_plate }}</td>
+            <td>{{ taxi.driver_name }}</td>
+            <td>{{ taxi.passenger_capacity }}</td>
+            <td>{{ taxi.status }}</td>
+            <td>{{ taxi.car_model }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

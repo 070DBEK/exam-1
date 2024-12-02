@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Meals List</title>
+</head>
+<body>
+    <h1>Meals Management</h1>
+    <form method="GET">
+        <label>Meal Name:</label><input type="text" name="name"><br>
+        <label>Ingredients:</label><input type="text" name="ingredients"><br>
+        <label>Price:</label><input type="text" name="price"><br>
+        <label>Type:</label>
+        <select name="type">
+            <option>Appetizer</option>
+            <option>Main Course</option>
+            <option>Dessert</option>
+        </select><br>
+        <label>Cuisine:</label><input type="text" name="cuisine"><br>
+        <button type="submit">Submit</button>
+    </form>
+    <h2>Meals List</h2>
+    <table border="1">
+        <tr>
+            <th>Name</th>
+            <th>Ingredients</th>
+            <th>Price</th>
+            <th>Type</th>
+            <th>Cuisine</th>
+        </tr>
+        {% for meal in meals %}
+        <tr>
+            <td>{{ meal.name }}</td>
+            <td>{{ meal.ingredients }}</td>
+            <td>{{ meal.price }}</td>
+            <td>{{ meal.type }}</td>
+            <td>{{ meal.cuisine }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
