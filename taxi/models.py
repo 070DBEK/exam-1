@@ -1,5 +1,6 @@
 from django.db import models
 
+
 class Taxi(models.Model):
     name = models.CharField(max_length=100)
     license_plate = models.CharField(max_length=20)

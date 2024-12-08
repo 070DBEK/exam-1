@@ -5,7 +5,8 @@
 </head>
 <body>
     <h1>Taxi Management</h1>
-    <form method="GET">
+    <form method="post">
+        {% csrf_token %}
         <label>Taxi Name:</label><input type="text" name="name">
         <br>
         <br>
